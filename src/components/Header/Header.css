@@ -1,0 +1,49 @@
+.header-title {
+  z-index: 10;
+  position: absolute;
+  padding: 16px;
+}
+
+.header-title h1 {
+  font-size: 60px;
+}
+
+.header-title h2 {
+  font-size: 24px;
+}
+
+.header-title a {
+  text-transform: uppercase;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
+  transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
+  background-color: #fff;
+  color: #7d42f4;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 22px;
+  text-decoration: none;
+  border-radius: 4px;
+  padding: 12px 22px;
+  margin: 18px 0;
+}
+
+.header-title a:active {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0);
+  transform: scale(0.96);
+}
+
+header .overlay {
+  background: linear-gradient(135deg, #01c135 0%, #7d42f4 100%);
+  opacity: 0.8;
+}
+
+@media (min-width: 980px) {
+  .header-title h1 {
+    font-size: 110px;
+  }
+
+  .header-title h2 {
+    font-size: 36px;
+    margin: 12px auto;
+  }
+}
