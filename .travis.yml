@@ -4,7 +4,9 @@ node_js:
   - "10"
 
 deploy:
-  provider: script
-  script: yarn install && yarn run deploy
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: build
   on:
     branch: master
