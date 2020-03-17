@@ -2,7 +2,7 @@
   "name": "demo",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://parlx-js.github.io",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
