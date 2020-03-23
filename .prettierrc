@@ -1,16 +1,7 @@
 {
-  "overrides": [
-    {
-      "files": "*.css",
-      "options": {
-        "singleQuote": false
-      }
-    },
-    {
-      "files": "*.js",
-      "options": {
-        "singleQuote": true
-      }
-    }
-  ]
+  "endOfLine": "lf",
+  "semi": false,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "es5"
 }
