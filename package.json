@@ -4,12 +4,12 @@
   "author": "Jakub Biesiada",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build --prefix-paths",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GITHUB_TOKEN@github.com/parlx-js/parlx-js.github.io.git",
+    "deploy": "gatsby build && gh-pages -d public -r https://$GITHUB_TOKEN@github.com/parlx-js/parlx-js.github.io.git",
     "prettier": "prettier --write 'src/**/*.{tsx,ts,json}'",
     "test": "echo 'Run your tests here'"
   },
