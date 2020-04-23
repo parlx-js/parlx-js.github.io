@@ -1,26 +1,24 @@
-import React, { useState, useEffect } from "react"
-import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import styled from "styled-components"
+import React, { useState, useEffect } from 'react';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 
-import { Parallax } from "../components/parallax"
-import { Icon } from "../components/icon"
+import { Parallax } from '../components/parallax';
+import { Icon } from '../components/icon';
 
 interface Props {
-  siteTitle?: string
+  background: any;
+  siteTitle?: string;
 }
 
-const HeaderWrapper = styled.header``
+const HeaderWrapper = styled.header``;
 
 const HeaderContent = styled.div<{ opacity: number }>`
   z-index: 10;
   position: absolute;
   padding: 16px;
-
-  .overlay {
-    background: linear-gradient(135deg, #01c135 0%, #7d42f4 100%);
-    opacity: 0.8;
-  }
-`
+`;
 
 const Title = styled.h1`
   font-size: 6rem;
@@ -32,7 +30,7 @@ const Title = styled.h1`
   @media (min-width: 980px) {
     font-size: 11rem;
   }
-`
+`;
 
 const SubTitle = styled.h2`
   margin: 10px 0;
@@ -43,9 +41,9 @@ const SubTitle = styled.h2`
     font-size: 3.6rem;
     margin: 12px auto;
   }
-`
+`;
 
-const GithubLink = styled.a`
+const GithubLink = styled(Link)`
   text-transform: uppercase;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
   transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
@@ -63,28 +61,35 @@ const GithubLink = styled.a`
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0);
     transform: scale(0.96);
   }
-`
+`;
 
-const Header: React.FC<Props> = ({ siteTitle = "" }) => {
-  const [height, setHeight] = useState(window.innerHeight)
-  const [opacity, setOpacity] = useState(1)
+const HeaderParallax = styled(Parallax)`
+  .overlay {
+    background: linear-gradient(135deg, #01c135 0%, #7d42f4 100%);
+    opacity: 0.8;
+  }
+`;
+
+const Header: React.FC<Props> = ({ background, siteTitle = '' }) => {
+  const [height, setHeight] = useState(window.innerHeight);
+  const [opacity, setOpacity] = useState(1);
 
   useEffect(() => {
-    window.addEventListener("resize", () => setHeight(window.innerHeight))
-  }, [])
+    window.addEventListener('resize', () => setHeight(window.innerHeight));
+  }, []);
 
   return (
     <HeaderWrapper>
-      <Parallax
+      <HeaderParallax
         settings={{
           height,
-          speed: "-0.3",
+          speed: -0.3,
           // base: document.getElementById('root')
         }}
         parlxMove={(e) => setOpacity(1 - e / 80)}
         overlay
       >
-        {/* <img className="parlx-children" src={mountains} alt="view" /> */}
+        <Img fluid={background.file.childImageSharp.fluid} />
 
         <HeaderContent opacity={1}>
           <Title>parlx.js</Title>
@@ -95,14 +100,14 @@ const Header: React.FC<Props> = ({ siteTitle = "" }) => {
             JS, TS, React and jQuery
           </SubTitle>
 
-          <GithubLink href="https://github.com/JB1905/parlx.js">
+          <GithubLink to="https://github.com/parlx-js/parlx.js">
             <Icon icon={faGithub} />
             See on GitHub
           </GithubLink>
         </HeaderContent>
-      </Parallax>
+      </HeaderParallax>
     </HeaderWrapper>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

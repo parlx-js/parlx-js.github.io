@@ -1,4 +1,6 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from 'styled-components';
+
+import { theme } from '../constants/theme';
 
 export const Global = createGlobalStyle`
   html {
@@ -8,10 +10,10 @@ export const Global = createGlobalStyle`
   body {
     margin: 0;
     min-width: 320px;
-    font-family: "Roboto", sans-serif;
-    background-color: #131a20;
-    font-size: 1.6rem;
-    color: #f8f8f8;
+    font-family: ${theme.font.family.body};
+    background-color: ${theme.colors.background};
+    font-size: ${theme.font.size.default};
+    color: ${theme.colors.text};
   }
 
   *,
@@ -21,4 +23,4 @@ export const Global = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-`
+`;

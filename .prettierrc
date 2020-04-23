@@ -1,7 +1,16 @@
 {
-  "endOfLine": "lf",
-  "semi": false,
-  "singleQuote": false,
-  "tabWidth": 2,
-  "trailingComma": "es5"
+  "overrides": [
+    {
+      "files": "*.scss",
+      "options": {
+        "singleQuote": false
+      }
+    },
+    {
+      "files": "*.{tsx,ts}",
+      "options": {
+        "singleQuote": true
+      }
+    }
+  ]
 }

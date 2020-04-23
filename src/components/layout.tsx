@@ -1,19 +1,15 @@
-import React from "react"
+import React from 'react';
 
-import { Global } from "./global"
-
-import Header from "../containers/header"
+import { Global } from './global';
 
 const Layout: React.FC = ({ children }) => {
   return (
     <>
-      <Header />
-
       {children}
 
       <Global />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
