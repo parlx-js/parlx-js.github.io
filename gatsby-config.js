@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/markdown-pages`,
         name: `markdown-pages`,
+        path: `${__dirname}/src/markdown-pages`,
       },
     },
     {
@@ -39,8 +39,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `parlx.js`,
+        short_name: `parlx.js`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
