@@ -41,7 +41,6 @@ jQuery:
 ```bash
 $ npm install jquery
 $ yarn add jquery
-$ bower install jquery
 ```
 
 ```js
