@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -13,6 +14,8 @@ interface Props {
   data: HomePageQuery;
 }
 
+const Main = styled.main``;
+
 const HomePage: React.FC<Props> = ({ data }) => {
   const { site, allMarkdownRemark } = data;
 
@@ -24,9 +27,11 @@ const HomePage: React.FC<Props> = ({ data }) => {
 
       <Header title={title} />
 
-      {allMarkdownRemark.edges.map(({ node }) => (
-        <Preview data={node} key={null} />
-      ))}
+      <Main>
+        {allMarkdownRemark.edges.map(({ node }) => (
+          <Preview data={node} key={null} />
+        ))}
+      </Main>
     </Layout>
   );
 };
