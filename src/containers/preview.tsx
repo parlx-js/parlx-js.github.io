@@ -26,6 +26,25 @@ const PreviewTitle = styled.h3`
 const PreviewContent = styled.div`
   p {
     font-size: 1.8rem;
+    line-height: 1.4;
+  }
+
+  a {
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(
+      135deg,
+      ${({ theme }) => theme.colors.primary} 0%,
+      ${({ theme }) => theme.colors.secondary} 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  code {
+    font-family: ${({ theme }) => theme.font.family.code};
+    background-color: ${({ theme }) => theme.colors.code} !important;
+    padding: 0.1em 0.4em !important;
   }
 
   .gatsby-highlight {
@@ -33,7 +52,7 @@ const PreviewContent = styled.div`
       background-color: ${({ theme }) => theme.colors.code};
 
       code {
-        font-family: ${({ theme }) => theme.font.family.code};
+        padding: 0 !important;
       }
     }
   }

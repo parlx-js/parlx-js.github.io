@@ -25,7 +25,7 @@ const HomePage: React.FC<Props> = ({ data }) => {
       <Header title={title} />
 
       {allMarkdownRemark.edges.map(({ node }) => (
-        <Preview data={node} />
+        <Preview data={node} key={null} />
       ))}
     </Layout>
   );

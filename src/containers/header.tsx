@@ -3,9 +3,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
+import ReactParlx from 'react-parlx';
 import Img from 'gatsby-image';
-
-import { Parallax } from '../components/parallax';
 
 import { HeaderQuery } from '../../graphql-types';
 
@@ -13,7 +12,9 @@ interface Props {
   title: string;
 }
 
-const HeaderWrapper = styled.header``;
+const HeaderWrapper = styled.header`
+  overflow: hidden;
+`;
 
 const HeaderContent = styled.div<{ opacity: number }>`
   z-index: 10;
@@ -70,22 +71,32 @@ const HeaderIcon = styled(FontAwesomeIcon)`
   margin-right: 10px;
 `;
 
-const HeaderBackgroud = styled(Img)`
+const HeaderBackground = styled(Img)`
   z-index: -1;
 `;
 
-const HeaderParallax = styled(Parallax)`
+const HeaderParallax = styled(ReactParlx)`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
   .overlay {
-    background: linear-gradient(135deg, #01c135 0%, #7d42f4 100%);
     opacity: 0.8;
+    position: absolute;
+    background: linear-gradient(
+      135deg,
+      ${({ theme }) => theme.colors.primary} 0%,
+      ${({ theme }) => theme.colors.secondary} 100%
+    );
   }
 
-  ${HeaderBackgroud},
+  ${HeaderBackground},
   .overlay {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    position: absolute;
   }
 `;
 
@@ -110,7 +121,10 @@ const Header: React.FC<Props> = ({ title }) => {
         parlxMove={(e) => setOpacity(1 - e / 80)}
         overlay
       >
-        <HeaderBackgroud fluid={data.file.childImageSharp.fluid} />
+        <HeaderBackground
+          className="parlx-children"
+          fluid={data.file.childImageSharp.fluid}
+        />
 
         <HeaderContent opacity={1}>
           <HeaderTitle>{title}</HeaderTitle>
