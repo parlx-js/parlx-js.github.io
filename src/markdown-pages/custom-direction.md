@@ -1,0 +1,13 @@
+---
+title: "Parallax Effect Direction"
+---
+
+To disable parallax effect on mobile on single element use following code in div tag:
+```html
+<div data-direction="vertical">
+```
+
+To disable parallax effect on all elements place in options:
+```js
+direction: 'vertical'
+```

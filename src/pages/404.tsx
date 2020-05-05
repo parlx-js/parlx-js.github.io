@@ -1,9 +1,9 @@
 declare global {
   namespace NodeJS {
     interface Global {
-      location: string
+      location: string;
     }
   }
 }
 
-export default () => (global.location = "/")
+export default () => (global.location = '/');

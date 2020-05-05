@@ -5,7 +5,6 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 import Header from '../containers/header';
-import Doc from '../containers/doc';
 import Preview from '../containers/preview';
 
 import { HomePageQuery } from '../../graphql-types';
@@ -15,19 +14,19 @@ interface Props {
 }
 
 const HomePage: React.FC<Props> = ({ data }) => {
-  const { title, description } = data.site.siteMetadata;
+  const { site, allMarkdownRemark } = data;
+
+  const { title, description } = site.siteMetadata;
 
   return (
     <Layout>
       <SEO title={title} description={description} />
 
-      <Header background={data} />
+      <Header title={title} />
 
-      <main>
-        <Doc />
-
-        <Preview />
-      </main>
+      {allMarkdownRemark.edges.map(({ node }) => (
+        <Preview data={node} />
+      ))}
     </Layout>
   );
 };
@@ -41,10 +40,13 @@ export const query = graphql`
       }
     }
 
-    file(relativePath: { eq: "images/mountains.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+          }
+          html
         }
       }
     }

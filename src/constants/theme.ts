@@ -9,10 +9,12 @@ export const theme = {
   colors: {
     text: '#f8f8f8',
     background: '#131a20',
+    code: '#21272d',
   },
   font: {
     family: {
       body: '"Roboto", sans-serif',
+      code: '"Roboto Mono", monospace',
     },
     size: {
       default: '1.6rem',

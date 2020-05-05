@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import { Link } from 'gatsby';
 
 import { Parallax } from '../components/parallax';
-import { Icon } from '../components/icon';
+
+import { HeaderQuery } from '../../graphql-types';
 
 interface Props {
-  background: any;
-  siteTitle?: string;
+  title: string;
 }
 
 const HeaderWrapper = styled.header``;
@@ -20,7 +21,7 @@ const HeaderContent = styled.div<{ opacity: number }>`
   padding: 16px;
 `;
 
-const Title = styled.h1`
+const HeaderTitle = styled.h1`
   font-size: 6rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -32,7 +33,7 @@ const Title = styled.h1`
   }
 `;
 
-const SubTitle = styled.h2`
+const HeaderSubTitle = styled.h2`
   margin: 10px 0;
   font-weight: 400;
   font-size: 2.4rem;
@@ -43,7 +44,7 @@ const SubTitle = styled.h2`
   }
 `;
 
-const GithubLink = styled(Link)`
+const HeaderGithubLink = styled.a`
   text-transform: uppercase;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.3);
   transition: transform 200ms ease-in-out, box-shadow 200ms ease-in-out;
@@ -63,16 +64,36 @@ const GithubLink = styled(Link)`
   }
 `;
 
+const HeaderIcon = styled(FontAwesomeIcon)`
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+`;
+
+const HeaderBackgroud = styled(Img)`
+  z-index: -1;
+`;
+
 const HeaderParallax = styled(Parallax)`
   .overlay {
     background: linear-gradient(135deg, #01c135 0%, #7d42f4 100%);
     opacity: 0.8;
   }
+
+  ${HeaderBackgroud},
+  .overlay {
+    position: absolute !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
-const Header: React.FC<Props> = ({ background, siteTitle = '' }) => {
+const Header: React.FC<Props> = ({ title }) => {
   const [height, setHeight] = useState(window.innerHeight);
   const [opacity, setOpacity] = useState(1);
+
+  const data = useStaticQuery<HeaderQuery>(query);
 
   useEffect(() => {
     window.addEventListener('resize', () => setHeight(window.innerHeight));
@@ -89,25 +110,37 @@ const Header: React.FC<Props> = ({ background, siteTitle = '' }) => {
         parlxMove={(e) => setOpacity(1 - e / 80)}
         overlay
       >
-        <Img fluid={background.file.childImageSharp.fluid} />
+        <HeaderBackgroud fluid={data.file.childImageSharp.fluid} />
 
         <HeaderContent opacity={1}>
-          <Title>parlx.js</Title>
+          <HeaderTitle>{title}</HeaderTitle>
 
-          <SubTitle>
+          <HeaderSubTitle>
             Parallax effect library for:
             <br />
             JS, TS, React and jQuery
-          </SubTitle>
+          </HeaderSubTitle>
 
-          <GithubLink to="https://github.com/parlx-js/parlx.js">
-            <Icon icon={faGithub} />
+          <HeaderGithubLink href="https://github.com/parlx-js/parlx.js">
+            <HeaderIcon icon={faGithub} />
             See on GitHub
-          </GithubLink>
+          </HeaderGithubLink>
         </HeaderContent>
       </HeaderParallax>
     </HeaderWrapper>
   );
 };
+
+export const query = graphql`
+  query Header {
+    file(relativePath: { eq: "images/mountains.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
 
 export default Header;

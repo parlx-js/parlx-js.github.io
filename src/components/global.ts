@@ -1,7 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { theme } from '../constants/theme';
-
 export const Global = createGlobalStyle`
   html {
     font-size: 62.5%;
@@ -10,10 +8,10 @@ export const Global = createGlobalStyle`
   body {
     margin: 0;
     min-width: 320px;
-    font-family: ${theme.font.family.body};
-    background-color: ${theme.colors.background};
-    font-size: ${theme.font.size.default};
-    color: ${theme.colors.text};
+    font-family: ${({ theme }) => theme.font.family.body};
+    background-color: ${({ theme }) => theme.colors.background};
+    font-size: ${({ theme }) => theme.font.size.default};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   *,
