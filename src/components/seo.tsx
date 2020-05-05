@@ -4,12 +4,14 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 import { PageQuery } from '../../graphql-types';
 
+type Meta =
+  | { name: string; content: string; property?: undefined }[]
+  | { property: string; content: string; name?: undefined }[];
+
 interface Props {
   description?: string;
   lang?: string;
-  meta?:
-    | { name: string; content: string; property?: undefined }[]
-    | { property: string; content: string; name?: undefined }[]; // TODO
+  meta?: Meta;
   title: string;
 }
 
