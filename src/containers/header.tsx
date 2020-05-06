@@ -20,6 +20,7 @@ const HeaderContent = styled.div<{ opacity: number }>`
   z-index: 10;
   position: absolute;
   padding: 16px;
+  opacity: ${({ opacity }) => opacity};
 `;
 
 const HeaderTitle = styled.h1`
@@ -113,11 +114,7 @@ const Header: React.FC<Props> = ({ title }) => {
   return (
     <HeaderWrapper>
       <HeaderParallax
-        settings={{
-          height,
-          speed: -0.3,
-          // base: document.getElementById('root')
-        }}
+        settings={{ height, speed: -0.3 }}
         parlxMove={(e) => setOpacity(1 - e / 80)}
         overlay
       >
@@ -126,7 +123,7 @@ const Header: React.FC<Props> = ({ title }) => {
           fluid={data.file.childImageSharp.fluid}
         />
 
-        <HeaderContent opacity={1}>
+        <HeaderContent opacity={opacity}>
           <HeaderTitle>{title}</HeaderTitle>
 
           <HeaderSubTitle>
