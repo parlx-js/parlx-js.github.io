@@ -24,15 +24,21 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1200,
+            },
           },
         ],
       },
     },
+    `gatsby-remark-prismjs`,
+    `gatsby-plugin-mdx-prismjs`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,

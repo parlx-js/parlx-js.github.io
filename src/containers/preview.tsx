@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MDXProvider } from '@mdx-js/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+// import Highlight from 'prism-react-renderer';
 
 const PreviewWrapper = styled.article`
   margin: 30px auto;
@@ -23,7 +26,7 @@ const PreviewTitle = styled.h3`
   }
 `;
 
-const PreviewContent = styled.div`
+const PreviewContent = styled(MDXRenderer)`
   p {
     font-size: 1.8rem;
     line-height: 1.4;
@@ -58,11 +61,13 @@ const PreviewContent = styled.div`
   }
 `;
 
-const Preview: React.FC<any> = ({ data }) => (
+const Preview: React.FC<any> = ({ title, content }) => (
   <PreviewWrapper>
-    <PreviewTitle>{data.frontmatter.title}</PreviewTitle>
+    <PreviewTitle>{title}</PreviewTitle>
 
-    <PreviewContent dangerouslySetInnerHTML={{ __html: data.html }} />
+    <MDXProvider>
+      <PreviewContent>{content}</PreviewContent>
+    </MDXProvider>
   </PreviewWrapper>
 );
 

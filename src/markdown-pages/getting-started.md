@@ -3,18 +3,21 @@ title: "Getting Started"
 ---
 
 ES6+:
+
 ```js
-import Parlx from 'parlx.js';
+import Parlx from "parlx.js";
 ```
 
 CommonJS:
+
 ```js
-const Parlx = require('parlx.js');
+const Parlx = require("parlx.js");
 ```
 
 JavaScript / TypeScript:
+
 ```js
-const elems = document.querySelectorAll('.parallax');
+const elems = document.querySelectorAll(".parallax");
 
 // v2+
 const parlx = Parlx.init({
@@ -24,7 +27,7 @@ const parlx = Parlx.init({
   },
   callbacks: {
     // callbacks...
-  }
+  },
 });
 
 // v1
@@ -34,6 +37,7 @@ const parlx = new Parlx(elems, {
 ```
 
 jQuery:
+
 ```html
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 ```
@@ -44,22 +48,22 @@ $ yarn add jquery
 ```
 
 ```js
-const jQuery = require('jquery');
+const jQuery = require("jquery");
 ```
 
 ```js
 // v2+
-$('.parallax').parlx({
+$(".parallax").parlx({
   settings: {
     // options...
   },
   callbacks: {
     // callbacks...
-  }
+  },
 });
 
 // v1
-$('.parallax').parlx({
+$(".parallax").parlx({
   // options...
 });
 ```
