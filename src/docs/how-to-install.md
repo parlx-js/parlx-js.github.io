@@ -1,5 +1,7 @@
 ---
 title: "How to install"
+icon: "faArrowCircleDown"
+order: 1
 ---
 
 npm / Yarn:

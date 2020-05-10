@@ -17,7 +17,7 @@ interface Props {
 const Main = styled.main``;
 
 const HomePage: React.FC<Props> = ({ data }) => {
-  const { site, allMdx } = data;
+  const { site, allMarkdownRemark } = data;
 
   const { title, description } = site.siteMetadata;
 
@@ -28,8 +28,8 @@ const HomePage: React.FC<Props> = ({ data }) => {
       <Header title={title} />
 
       <Main>
-        {allMdx.nodes.map(({ frontmatter, body, id }) => (
-          <Preview title={frontmatter.title} content={body} key={id} />
+        {allMarkdownRemark.nodes.map(({ frontmatter, html, id }) => (
+          <Preview title={frontmatter.title} content={html} key={id} />
         ))}
       </Main>
     </Layout>
@@ -45,26 +45,15 @@ export const query = graphql`
       }
     }
 
-    allMdx {
+    allMarkdownRemark(sort: { order: ASC, fields: frontmatter___order }) {
       nodes {
         id
         frontmatter {
           title
         }
-        body
+        html
       }
     }
-
-    # allMarkdownRemark {
-    #   edges {
-    #     node {
-    #       frontmatter {
-    #         title
-    #       }
-    #       html
-    #     }
-    #   }
-    # }
   }
 `;
 

@@ -1,5 +1,6 @@
 ---
 title: "Implementations"
+order: 2
 ---
 
 [react-parlx](https://github.com/parlx-js/react-parlx) – use parlx.js as a component in React

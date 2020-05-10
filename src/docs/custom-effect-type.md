@@ -1,5 +1,6 @@
 ---
 title: "Parallax Effect Type"
+order: 10
 ---
 
 To set type of parallax effect use following code in div tag:

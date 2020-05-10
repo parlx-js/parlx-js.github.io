@@ -1,5 +1,6 @@
 ---
 title: "Getting Started"
+order: 3
 ---
 
 ES6+:

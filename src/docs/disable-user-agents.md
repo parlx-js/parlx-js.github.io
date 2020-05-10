@@ -1,5 +1,6 @@
 ---
 title: "Disable parallax effect on selected user agents"
+order: 8
 ---
 
 To disable parallax effect on selected user agents on single element use following code in div tag:

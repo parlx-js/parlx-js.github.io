@@ -19,26 +19,20 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/markdown-pages`,
+        name: `docs`,
+        path: `${__dirname}/src/docs`,
       },
     },
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [
+        plugins: [
           {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200,
-            },
+            resolve: `gatsby-remark-prismjs`,
           },
         ],
       },
     },
-    `gatsby-remark-prismjs`,
-    `gatsby-plugin-mdx-prismjs`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,

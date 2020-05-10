@@ -1,5 +1,6 @@
 ---
 title: "Parallax Effect Direction"
+order: 9
 ---
 
 To disable parallax effect on mobile on single element use following code in div tag:

@@ -1,5 +1,6 @@
 ---
 title: "Methods"
+order: 5
 ---
 
 Destroy method (v2+)
