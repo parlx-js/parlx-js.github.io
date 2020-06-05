@@ -9,7 +9,7 @@ import Img from 'gatsby-image';
 import { HeaderQuery } from '../../graphql-types';
 
 interface Props {
-  title: string;
+  readonly title: string;
 }
 
 const HeaderWrapper = styled.header`
