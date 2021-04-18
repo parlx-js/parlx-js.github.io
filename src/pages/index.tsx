@@ -4,22 +4,18 @@ import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-
-import Header from '../containers/header';
-import Preview from '../containers/preview';
-
+import Header from '../components/header';
 import { HomePageQuery } from '../../graphql-types';
+import { HowToInstall } from '../components/sections/how-to-install';
+
+const Main = styled.main``;
 
 interface Props {
   readonly data: HomePageQuery;
 }
 
-const Main = styled.main``;
-
-const HomePage: React.FC<Props> = ({ data }) => {
-  const { site, allMarkdownRemark } = data;
-
-  const { title, description } = site.siteMetadata;
+const HomePage = ({ data }: Props) => {
+  const { title, description } = data.site.siteMetadata;
 
   return (
     <Layout>
@@ -28,9 +24,7 @@ const HomePage: React.FC<Props> = ({ data }) => {
       <Header title={title} />
 
       <Main>
-        {allMarkdownRemark.nodes.map(({ frontmatter, html, id }) => (
-          <Preview title={frontmatter.title} content={html} key={id} />
-        ))}
+        <HowToInstall />
       </Main>
     </Layout>
   );
@@ -42,16 +36,6 @@ export const query = graphql`
       siteMetadata {
         title
         description
-      }
-    }
-
-    allMarkdownRemark(sort: { order: ASC, fields: frontmatter___order }) {
-      nodes {
-        id
-        frontmatter {
-          title
-        }
-        html
       }
     }
   }

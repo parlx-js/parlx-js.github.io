@@ -1,10 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const PreviewWrapper = styled.section``;
-
-const PreviewBody = styled.article`
+export const Body = styled.section`
   margin: 30px auto;
   max-width: ${({ theme }) => theme.breakpoints.lg};
   width: calc(100% - 40px);
@@ -15,7 +11,7 @@ const PreviewBody = styled.article`
   }
 `;
 
-const PreviewTitle = styled.h3`
+export const Title = styled.h3`
   margin: 8px 0;
   text-transform: uppercase;
   font-weight: 900;
@@ -26,7 +22,7 @@ const PreviewTitle = styled.h3`
   }
 `;
 
-const PreviewContent = styled.div`
+export const Content = styled.div`
   p {
     font-size: 1.8rem;
     line-height: 1.4;
@@ -40,6 +36,7 @@ const PreviewContent = styled.div`
       ${({ theme }) => theme.colors.primary} 0%,
       ${({ theme }) => theme.colors.secondary} 100%
     );
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -60,19 +57,3 @@ const PreviewContent = styled.div`
     }
   }
 `;
-
-const Preview: React.FC<any> = ({ title, content }) => (
-  <PreviewWrapper>
-    <PreviewBody>
-      <PreviewTitle>
-        <FontAwesomeIcon icon={null} />
-
-        {title}
-      </PreviewTitle>
-
-      <PreviewContent dangerouslySetInnerHTML={{ __html: content }} />
-    </PreviewBody>
-  </PreviewWrapper>
-);
-
-export default Preview;

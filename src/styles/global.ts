@@ -1,6 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const Global = createGlobalStyle`
+import { ThemeType } from './theme';
+
+export const Global = createGlobalStyle<{ readonly theme: ThemeType }>`
   html {
     font-size: 62.5%;
   }

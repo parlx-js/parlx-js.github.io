@@ -1,7 +1,7 @@
 {
   "overrides": [
     {
-      "files": "*.scss",
+      "files": "*.css",
       "options": {
         "singleQuote": false
       }

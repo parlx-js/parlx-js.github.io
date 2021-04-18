@@ -22,4 +22,6 @@ export const theme = {
       default: '1.6rem',
     },
   },
-};
+} as const;
+
+export type ThemeType = typeof theme;

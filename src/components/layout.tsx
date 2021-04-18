@@ -1,9 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import { Global } from './global';
-
-import { theme } from '../constants/theme';
+import { Global } from '../styles/global';
+import { theme } from '../styles/theme';
 
 const Layout: React.FC = ({ children }) => (
   <ThemeProvider theme={theme}>
