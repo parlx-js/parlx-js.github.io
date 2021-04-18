@@ -8,12 +8,12 @@ type Meta =
   | { name: string; content: string; property?: undefined }[]
   | { property: string; content: string; name?: undefined }[];
 
-interface Props {
+type Props = {
   readonly description?: string;
   readonly lang?: string;
   readonly meta?: Meta;
   readonly title: string;
-}
+};
 
 const SEO = ({ description, lang = 'en', meta = [], title = '' }: Props) => {
   const { site } = useStaticQuery<PageQuery>(query);

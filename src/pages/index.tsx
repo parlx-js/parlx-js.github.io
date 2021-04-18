@@ -10,9 +10,9 @@ import { HowToInstall } from '../components/sections/how-to-install';
 
 const Main = styled.main``;
 
-interface Props {
+type Props = {
   readonly data: HomePageQuery;
-}
+};
 
 const HomePage = ({ data }: Props) => {
   const { title, description } = data.site.siteMetadata;
