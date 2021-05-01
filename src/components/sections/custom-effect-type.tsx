@@ -2,11 +2,11 @@ import React from 'react';
 import { faMapSigns } from '@fortawesome/free-solid-svg-icons';
 
 // import HelloWorld from '../../docs/how-to-install.md'
-import Preview from '../preview';
+import Docs from '../docs';
 
 export const CustomEffectType = () => {
   return (
-    <Preview title="Parallax effect type" icon={faMapSigns}>
+    <Docs title="Parallax effect type" icon={faMapSigns}>
       <p>To set type of parallax effect use following code in div tag:</p>
       <pre className="language-html">
         <code>&#60;div data-type="foreground"></code>
@@ -18,6 +18,6 @@ export const CustomEffectType = () => {
       <pre className="language-javascript">
         <code>type: 'foreground'</code>
       </pre>
-    </Preview>
+    </Docs>
   );
 };

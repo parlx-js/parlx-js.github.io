@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactParlx from 'react-parlx';
 
+import { Preview } from '../preview';
+
 export const Video = () => {
   return (
-    <section className="split-view">
+    <Preview>
       <ReactParlx className="parallax" overlay>
         <video
           className="parlx-children"
@@ -15,6 +17,6 @@ export const Video = () => {
         />
         <h3 className="parallax-marker">Not only images!</h3>
       </ReactParlx>
-    </section>
+    </Preview>
   );
 };

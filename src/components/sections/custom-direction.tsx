@@ -2,11 +2,11 @@ import React from 'react';
 import { faDirections } from '@fortawesome/free-solid-svg-icons';
 
 // import HelloWorld from '../../docs/how-to-install.md'
-import Preview from '../preview';
+import Docs from '../docs';
 
 export const CustomDirection = () => {
   return (
-    <Preview title="Parallax effect direction" icon={faDirections}>
+    <Docs title="Parallax effect direction" icon={faDirections}>
       <p>
         To disable parallax effect on mobile on single element use following
         code in div tag:
@@ -21,6 +21,6 @@ export const CustomDirection = () => {
       <pre className="language-javascript">
         <code>direction: 'vertical'</code>
       </pre>
-    </Preview>
+    </Docs>
   );
 };

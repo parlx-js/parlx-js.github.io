@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactParlx from 'react-parlx';
 
+import { Preview } from '../preview';
+
 export const Exclude = () => {
   return (
-    <section className="split-view">
+    <Preview>
       <ReactParlx
         className="parallax"
         settings={{ exclude: /(Firefox|iPad)/ }}
@@ -16,6 +18,6 @@ export const Exclude = () => {
         />
         <h3 className="parallax-marker">Exclude Firefox & iPad</h3>
       </ReactParlx>
-    </section>
+    </Preview>
   );
 };

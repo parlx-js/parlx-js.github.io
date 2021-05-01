@@ -2,11 +2,11 @@ import React from 'react';
 import { faArrowCircleDown } from '@fortawesome/free-solid-svg-icons';
 
 // import HelloWorld from '../../docs/how-to-install.md'
-import Preview from '../preview';
+import Docs from '../docs';
 
 export const HowToInstall = () => {
   return (
-    <Preview title="How to install" icon={faArrowCircleDown}>
+    <Docs title="How to install" icon={faArrowCircleDown}>
       {/* <HelloWorld /> */}
       <p>npm / Yarn:</p>
       <pre className="language-javascript">
@@ -28,6 +28,6 @@ export const HowToInstall = () => {
         <br />
         unpkg: <code>https://unpkg.com/parlx.js/</code>
       </p> */}
-    </Preview>
+    </Docs>
   );
 };

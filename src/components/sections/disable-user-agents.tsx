@@ -2,14 +2,11 @@ import React from 'react';
 import { faBan } from '@fortawesome/free-solid-svg-icons';
 
 // import HelloWorld from '../../docs/how-to-install.md'
-import Preview from '../preview';
+import Docs from '../docs';
 
 export const DisableUserAgents = () => {
   return (
-    <Preview
-      title="Disable parallax effect on selected user agents"
-      icon={faBan}
-    >
+    <Docs title="Disable parallax effect on selected user agents" icon={faBan}>
       <p>
         To disable parallax effect on selected user agents on single element use
         following code in div tag:
@@ -27,6 +24,6 @@ export const DisableUserAgents = () => {
       <pre className="language-javascript">
         <code>exclude: /(iPod|iPhone|iPad|Android)/</code>
       </pre>
-    </Preview>
+    </Docs>
   );
 };

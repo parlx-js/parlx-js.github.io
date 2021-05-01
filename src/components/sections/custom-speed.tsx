@@ -2,11 +2,11 @@ import React from 'react';
 import { faTachometerAlt } from '@fortawesome/free-solid-svg-icons';
 
 // import HelloWorld from '../../docs/how-to-install.md'
-import Preview from '../preview';
+import Docs from '../docs';
 
 export const CustomSpeed = () => {
   return (
-    <Preview title="Custom speed" icon={faTachometerAlt}>
+    <Docs title="Custom speed" icon={faTachometerAlt}>
       <p>
         To set custom speed to single element use following code in div tag:
       </p>
@@ -20,6 +20,6 @@ export const CustomSpeed = () => {
       <pre className="language-javascript">
         <code>speed: 0.1</code>
       </pre>
-    </Preview>
+    </Docs>
   );
 };

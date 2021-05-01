@@ -2,11 +2,11 @@ import React from 'react';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
 // import HelloWorld from '../../docs/how-to-install.md'
-import Preview from '../preview';
+import Docs from '../docs';
 
 export const GettingStarted = () => {
   return (
-    <Preview title="Getting Started" icon={faPlayCircle}>
+    <Docs title="Getting Started" icon={faPlayCircle}>
       <p>ES6+:</p>
       <pre className="language-javascript">
         <code>import Parlx from 'parlx.js';</code>
@@ -106,6 +106,6 @@ export const GettingStarted = () => {
         <br />
         <code>&#125;);</code>
       </pre>
-    </Preview>
+    </Docs>
   );
 };

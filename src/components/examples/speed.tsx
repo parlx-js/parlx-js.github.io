@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactParlx from 'react-parlx';
 
+import { Preview } from '../preview';
+
 export const Speed = () => {
   return (
-    <section className="split-view">
+    <Preview>
       <ReactParlx className="parallax" overlay>
         <img
           className="parlx-children"
@@ -21,6 +23,6 @@ export const Speed = () => {
         />
         <h3 className="parallax-marker">-0.3</h3>
       </ReactParlx>
-    </section>
+    </Preview>
   );
 };

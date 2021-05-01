@@ -1,18 +1,17 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-import * as S from './preview.styles';
+import * as S from './docs.styles';
 
 type Props = {
   readonly title: string;
   readonly icon?: IconProp;
 };
 
-const Preview: React.FC<Props> = ({ title, icon, children }) => (
+const Docs: React.FC<Props> = ({ title, icon, children }) => (
   <S.Body>
     <S.Title>
-      <FontAwesomeIcon icon={icon} />
+      <S.Icon icon={icon} />
 
       {title}
     </S.Title>
@@ -21,4 +20,4 @@ const Preview: React.FC<Props> = ({ title, icon, children }) => (
   </S.Body>
 );
 
-export default Preview;
+export default Docs;

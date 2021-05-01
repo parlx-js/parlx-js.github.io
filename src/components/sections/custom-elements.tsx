@@ -1,11 +1,11 @@
 import React from 'react';
 
 // import HelloWorld from '../../docs/how-to-install.md'
-import Preview from '../preview';
+import Docs from '../docs';
 
 export const CustomElements = () => {
   return (
-    <Preview
+    <Docs
       title={
         <>
           <span role="img" aria-label="party">
@@ -25,6 +25,6 @@ export const CustomElements = () => {
       <pre className="language-html">
         <code>&#60;video class="parlx-children" src="sample.mp4"></code>
       </pre>
-    </Preview>
+    </Docs>
   );
 };

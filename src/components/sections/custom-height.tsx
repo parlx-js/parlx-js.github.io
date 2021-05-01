@@ -2,11 +2,11 @@ import React from 'react';
 import { faRulerVertical } from '@fortawesome/free-solid-svg-icons';
 
 // import HelloWorld from '../../docs/how-to-install.md'
-import Preview from '../preview';
+import Docs from '../docs';
 
 export const CustomHeight = () => {
   return (
-    <Preview title="Custom height" icon={faRulerVertical}>
+    <Docs title="Custom height" icon={faRulerVertical}>
       <p>
         To set custom height to single element use following code in div tag:
       </p>
@@ -20,6 +20,6 @@ export const CustomHeight = () => {
       <pre className="language-javascript">
         <code>height: '700px'</code>
       </pre>
-    </Preview>
+    </Docs>
   );
 };

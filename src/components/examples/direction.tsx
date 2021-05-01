@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactParlx from 'react-parlx';
+// import { StaticImage } from "gatsby-plugin-image"
+
+import { Preview } from '../preview';
 
 export const Direction = () => {
   return (
     <>
-      <section className="split-view">
+      <Preview>
         <ReactParlx className="parallax" overlay>
           <img
             className="parlx-children"
-            // src={einkorn}
+            // src="../../assets/images/einkorn.jpg"
             alt="einkorn"
           />
+
           <h3 className="parallax-marker">vertical</h3>
         </ReactParlx>
 
@@ -26,9 +30,9 @@ export const Direction = () => {
           />
           <h3 className="parallax-marker">horizontal</h3>
         </ReactParlx>
-      </section>
+      </Preview>
 
-      <section className="split-view">
+      <Preview>
         <ReactParlx
           className="parallax"
           settings={{ direction: 'diagonal' }}
@@ -41,7 +45,7 @@ export const Direction = () => {
           />
           <h3 className="parallax-marker">diagonal</h3>
         </ReactParlx>
-      </section>
+      </Preview>
     </>
   );
 };
