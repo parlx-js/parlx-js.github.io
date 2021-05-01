@@ -3,19 +3,19 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useViewport } from 'react-viewport-hooks';
 
-import * as S from './header.styles';
-import { HeaderQuery } from '../../../graphql-types';
+import * as S from './hero.styles';
+import { HeroQuery } from '../../../graphql-types';
 
 type Props = {
   readonly title: string;
 };
 
-const Header = ({ title }: Props) => {
+const Hero = ({ title }: Props) => {
   const { vh } = useViewport({ defaultVH: window?.innerHeight });
 
   const [opacity, setOpacity] = useState(1);
 
-  const data = useStaticQuery<HeaderQuery>(query);
+  const data = useStaticQuery<HeroQuery>(query);
 
   return (
     <S.Wrapper>
@@ -49,7 +49,7 @@ const Header = ({ title }: Props) => {
 };
 
 export const query = graphql`
-  query Header {
+  query Hero {
     file(relativePath: { eq: "images/mountains.jpg" }) {
       childImageSharp {
         fluid {
@@ -60,4 +60,4 @@ export const query = graphql`
   }
 `;
 
-export default Header;
+export default Hero;
