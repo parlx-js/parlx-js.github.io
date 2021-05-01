@@ -14,7 +14,6 @@ export const Direction = () => {
             // src="../../assets/images/einkorn.jpg"
             alt="einkorn"
           />
-
           <h3 className="parallax-marker">vertical</h3>
         </ReactParlx>
 

@@ -45,7 +45,7 @@ const HomePage = ({ data }: PageProps<HomePageQuery>) => {
         <CustomDirection />
         <Direction />
         <CustomEffectType />
-        <Video />
+        {/* <Video /> */}
         <CustomElements />
       </Main>
     </Layout>
