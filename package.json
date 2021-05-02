@@ -9,8 +9,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public",
-    "//deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GITHUB_TOKEN@github.com/parlx-js/parlx-js.github.io.git",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GITHUB_TOKEN@github.com/parlx-js/parlx-js.github.io.git",
     "prettier": "prettier --write 'src/**/*.{tsx,ts,md,css}'",
     "test": "echo 'Run your tests here'"
   },
