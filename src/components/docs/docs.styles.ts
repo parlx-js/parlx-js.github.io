@@ -46,20 +46,4 @@ export const Content = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
-  code {
-    font-family: ${({ theme }) => theme.font.family.code};
-    background-color: ${({ theme }) => theme.colors.code} !important;
-    padding: 0.1em 0.4em !important;
-  }
-
-  .gatsby-highlight {
-    pre {
-      background-color: ${({ theme }) => theme.colors.code};
-
-      code {
-        padding: 0 !important; /* TODO */
-      }
-    }
-  }
 `;

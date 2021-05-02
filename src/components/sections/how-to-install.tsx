@@ -16,9 +16,11 @@ export const HowToInstall = () => {
       </pre>
 
       <p>HTML script tag:</p>
-      <pre className="language-html">
-        <code>&#60;script src="/path/to/parlx.js"&#62;&#60;/script&#62;</code>
-      </pre>
+      <div className="gatsby-highlight">
+        <pre className="language-html">
+          <code>&#60;script src="/path/to/parlx.js"&#62;&#60;/script&#62;</code>
+        </pre>
+      </div>
 
       {/* <p>CDNs:</p>
       <p>
